@@ -1,0 +1,108 @@
+* {
+    font-family: 'Roboto Condensed', sans-serif;
+    text-align: center;
+}
+
+body {
+    background-color: #ccd4bc;
+}
+
+.books {
+    background-color: #598392;
+    margin: 30px auto 50px ;
+    text-align: center;
+    width: 80vw;
+    height: 50vh;
+    border-collapse: collapse;
+}
+
+th {
+    color: whitesmoke;
+    text-align: center;
+    font-size: 1.5em;
+    padding: 20px;
+}
+
+.sort {
+    cursor: pointer;
+}
+
+button {
+    cursor: pointer;
+}
+
+tr {
+    border: #ccd4bc .5px solid;
+}
+
+td {
+    min-width: 40px;
+    padding: 10px;
+    border-top: solid 0.3px lightgray;
+    font-size: 1.2em;
+}
+
+.modal {
+    background-color: #aec3b0;
+    padding: 15px;
+    position: fixed;
+    top: 10%;
+    left: 150%;
+    height: 83vh;
+    min-width: 200px;
+    text-align: center;
+}
+
+.modal.open {
+    left: 20%;
+    right: 20%;
+    transition: left 0.5s;
+}
+
+.modal h3 {
+    color: #598392;
+    text-decoration: underline;
+    text-transform: capitalize;
+}
+
+.modal h4 span {
+    color: #598392;
+}
+
+.modal>p {
+    text-align: left;
+}
+
+.user-msg {
+    position: fixed;
+    bottom: -100px;
+    right: 10px;
+    background-color: #598392;
+    color: whitesmoke;
+    padding: 20px;
+}
+
+.user-msg.open {
+    bottom: 5%;
+    right: 5%;
+    transition: bottom 0.5s;
+}
+
+.rate {
+    background-color: #598392;
+    margin: 10px auto 25px;
+}
+
+.rate td{
+    border: none;    
+}
+
+.add {
+    height: 15vh;
+    font-size: 1em;
+
+}
+
+.page-display {
+    margin-bottom:10px;
+}
