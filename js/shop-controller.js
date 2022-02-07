@@ -5,6 +5,7 @@ function onInit() {
 }
 
 function renderBooks() {
+    
     var books = getBooks();
     var strHtml = books.map(book => {
         return `<tr>
