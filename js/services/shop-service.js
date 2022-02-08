@@ -49,6 +49,7 @@ function getBooks() {
     // 0-3
     // 3-6
     // 7-9
+    
     var books = gBooks.slice(startIdx, startIdx + PAGE_SIZE);
     return books;
 }
@@ -57,12 +58,10 @@ function getBooksSorted() {
     var changeDir = gSortDir === 'desc' ? -1 : 1;
     if (gSortBy === 'AZ') {
         console.log('sort', changeDir);
-        gBooks.sort((a, b) => {
-            return (a.name.toUpperCase() > b.name.toUpperCase() ? 1 : -1) * changeDir;
-        });
+        gBooks.sort((a, b) =>((a.name.toUpperCase() > b.name.toUpperCase() ? 1 : -1) * changeDir));
     } else if (gSortBy === 'PRICE') {
-        gBooks.sort((a, b) => a.price - b.price) * changeDir;
-    } else if (gSortBy === 'RATE') { gBooks.sort((a, b) => a.rate - b.rate) * changeDir; };
+        gBooks.sort((a, b) => (a.price - b.price)*changeDir);
+    } else if (gSortBy === 'RATE') { gBooks.sort((a, b) => (a.rate - b.rate)*changeDir); };
 }
 
 function setSort(sortBy) {
@@ -88,13 +87,18 @@ function updatePrice(bookId, newPrice) {
 }
 
 function addBook(name, price) {
+    // console.log('gBooks before add',gBooks)
     gBooks.unshift(_createBook(name, price));
+    // console.log('gBooks after add',gBooks)
+    _setPageAmount()
+    // console.log('gPageAmount',gPageAmount)
     _saveBooksToStorage();
 }
 
 function removeBook(bookId) {
     const bookIdx = gBooks.findIndex(book => bookId === book.id);
     const removedBook = gBooks.splice(bookIdx, 1);
+    _setPageAmount()
     _saveBooksToStorage();
     return removedBook[0]
 }

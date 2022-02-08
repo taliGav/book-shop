@@ -7,6 +7,14 @@ body {
     background-color: #ccd4bc;
 }
 
+body.rtl {
+    direction: rtl;
+}
+
+h1 {
+margin-bottom: 30px;
+}
+
 .books {
     background-color: #598392;
     margin: 30px auto 50px ;
@@ -42,7 +50,7 @@ td {
     font-size: 1.2em;
 }
 
-.modal {
+.modal-book {
     background-color: #aec3b0;
     padding: 15px;
     position: fixed;
@@ -53,23 +61,23 @@ td {
     text-align: center;
 }
 
-.modal.open {
+.modal-book.open {
     left: 20%;
     right: 20%;
     transition: left 0.5s;
 }
 
-.modal h3 {
+.modal-book h3 {
     color: #598392;
     text-decoration: underline;
     text-transform: capitalize;
 }
 
-.modal h4 span {
+.modal-book h4 span {
     color: #598392;
 }
 
-.modal>p {
+.modal-book>p {
     text-align: left;
 }
 
